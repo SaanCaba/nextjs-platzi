@@ -1,0 +1,45 @@
+.contProduct{
+    width: min-content;
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 10px 0px 10px 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    
+}
+
+.contProductCol{
+    flex-direction: column;
+}
+
+.title{
+    text-align: center;
+    font-size: 22px;
+}
+
+.price{
+    text-align: center;
+    font-size: 19px;
+    color: rgb(149, 200, 124);
+}
+
+.contImg{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+}
+
+.imgProduct{
+    transition: 1s linear;
+    position: absolute;
+}
+
+.imgProduct:hover{
+    scale: 1.09;
+}
