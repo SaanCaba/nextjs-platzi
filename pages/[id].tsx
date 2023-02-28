@@ -1,13 +1,13 @@
 import { GetStaticProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { loadDataAvo } from "pages";
+// import { loadDataAvo } from "pages";
 import React, { useEffect, useState } from "react";
 import { TProduct } from "../database/models/product.model";
 
 export const getServerSideProps = async (context) => {
   try {
-    let result =  await fetch('http://localhost:3000/api/avo/' + context.params.id)
+    let result =  await fetch(process.env.NEXT_PUBLIC_API_URL + context.params.id)
     let response = await result.json()
     let avo = response.data
     return {
