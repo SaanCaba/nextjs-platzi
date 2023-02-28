@@ -6,7 +6,7 @@ import styles from './index.module.css'
 
 export const getServerSideProps = async () => {
  
-  const response = await fetch(process.env.NEXT_PUBLIC_API_URL)
+  const response = await fetch('https://nextjs-platzi-ten.vercel.app/api/avo')
   const result = await response.json()
   const avoList: TProduct[] = result.data
   

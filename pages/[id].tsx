@@ -7,7 +7,7 @@ import { TProduct } from "../database/models/product.model";
 
 export const getServerSideProps = async (context) => {
   try {
-    let result =  await fetch(process.env.NEXT_PUBLIC_API_URL + context.params.id)
+    let result =  await fetch('https://nextjs-platzi-ten.vercel.app/api/avo/' + context.params.id)
     let response = await result.json()
     let avo = response.data
     return {
