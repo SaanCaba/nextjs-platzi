@@ -4,32 +4,11 @@ import React, {useState, useEffect} from 'react'
 import { TProduct } from "../database/models/product.model"
 import styles from './index.module.css'
 
-export const getServerSideProps = async () => {
+// export const getServerSideProps = async () => {
  
-  const response = await fetch('https://nextjs-platzi-ten.vercel.app/api/avo')
-  const result = await response.json()
-  const avoList: TProduct[] = result.data
-  
-  return {
-    props:{
-      // tiene que ser el mismo nombre que lo que el componente recibe por prop.
-      avoList
-    }
-  }
-}
-
-// export async function loadDataAvo(){
-//   const response = await fetch(process.env.API_HOST)
+//   const response = await fetch('https://nextjs-platzi-ten.vercel.app/api/avo')
 //   const result = await response.json()
-//   return result.data
-// }
-
-
-// export const getStaticProps = async () => {
- 
-//   // const response = await fetch(process.env.API_HOST)
-//   // const result = await response.json()
-//   const avoList: TProduct[] = await loadDataAvo()
+//   const avoList: TProduct[] = result.data
   
 //   return {
 //     props:{
@@ -38,6 +17,27 @@ export const getServerSideProps = async () => {
 //     }
 //   }
 // }
+
+export async function loadDataAvo(){
+  const response = await fetch('https://nextjs-platzi-ten.vercel.app/api/avo')
+  const result = await response.json()
+  return result.data
+}
+
+
+export const getStaticProps = async () => {
+ 
+  // const response = await fetch(process.env.API_HOST)
+  // const result = await response.json()
+  const avoList: TProduct[] = await loadDataAvo()
+  
+  return {
+    props:{
+      // tiene que ser el mismo nombre que lo que el componente recibe por prop.
+      avoList
+    }
+  }
+}
 
 
 
